@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:05:20 2017 paul prost
-** Last update Wed Apr 26 16:43:27 2017 paul prost
+** Last update Thu Apr 27 17:11:26 2017 paul prost
 */
 
 #include "my.h"
@@ -33,27 +33,42 @@ void		create_room(char *s, int a, t_data *d, t_list *list)
   t_node	*node;
 
   list = list;
-  tab = my_str_to_wordtab(s);
+  tab = my_str_to_wordtab(s, 3, ' ');
   if (a == 1)
-    d->start = tab[0];
+    {
+      d->start = tab[0];
+      d->start_posx = my_get_nbr(tab[2]);
+      d->start_posy = my_get_nbr(tab[1]);
+    }
   else if (a == 2)
-    d->end = tab[0];
+    {
+      d->end = tab[0];
+      d->end_posx = my_get_nbr(tab[2]);
+      d->end_posy = my_get_nbr(tab[1]);
+    }
   node = create_nodes(tab[0], my_get_nbr(tab[1]), my_get_nbr(tab[2]));
   push_back(list, node);
+  free(tab);
 }
 
 void	create_tunnels(char *s)
 {
-  s = s;
+  char	**tab;
+
+  tab = my_str_to_wordtab(s, 2, '-');
 }
 
 int	anth_nbr(int fd, t_data *d)
 {
   char	*s;
 
-  s = get_next_line(fd);
+  if ((s = get_next_line(fd)) == NULL)
+    return (-1);
   while (s[0] == '#')
     s = get_next_line(fd);
-  d->anth_nbr = my_get_nbr(s);
+  if (check_num(s) == 0)
+    d->anth_nbr = my_get_nbr(s);
+  else
+    d->anth_nbr = 0;
   return (fd);
 }

@@ -5,10 +5,24 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:44:56 2017 paul prost
-** Last update Wed Apr 26 16:31:02 2017 paul prost
+** Last update Thu Apr 27 17:10:55 2017 paul prost
 */
 
 #include "my.h"
+
+int	check_num(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (str[i] != '\0')
+    {
+      if (str[i] < '0' || str[i] > '9' )
+	return (1);
+      i++;
+    }
+  return (0);
+}
 
 int	check_alpha(char *str)
 {

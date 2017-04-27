@@ -5,17 +5,17 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:20:58 2017 paul prost
-** Last update Wed Apr 26 16:30:09 2017 paul prost
+** Last update Wed Apr 26 19:01:17 2017 paul prost
 */
 
 #include "my.h"
 
-int	length(char *str, int i)
+int	length(char *str, int i, char c)
 {
   int	len;
 
   len = 0;
-  while (str[i] != ' ' && str[i] != '\0')
+  while (str[i] != c && str[i] != '\0')
     {
       i++;
       len++;
@@ -23,7 +23,7 @@ int	length(char *str, int i)
   return (len);
 }
 
-char	**my_str_to_wordtab(char *str)
+char	**my_str_to_wordtab(char *str, int a, char c)
 {
   int	len;
   char	**tab;
@@ -32,11 +32,11 @@ char	**my_str_to_wordtab(char *str)
   int	j;
 
   j = (n = (i = 0));
-  tab = malloc(sizeof(char *) * (3 + 1));
-  tab[3] = NULL;
+  tab = malloc(sizeof(char *) * (a + 1));
+  tab[a] = NULL;
   while (str[i])
     {
-      len = length(str, i);
+      len = length(str, i, c);
       tab[n] = malloc(sizeof(char) * (len + 1));
       while (j < len)
 	{

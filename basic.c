@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:45:12 2017 paul prost
-** Last update Wed Apr 26 16:28:56 2017 paul prost
+** Last update Thu Apr 27 17:18:51 2017 paul prost
 */
 
 #include "my.h"
@@ -48,4 +48,26 @@ void    my_putchar(char c)
 void    my_putchar_error(char c)
 {
   write(2, &c, 1);
+}
+
+int     my_put_nbr(int nbr)
+{
+  int   nombre;
+
+  if (nbr < 0)
+    {
+      nbr = nbr * -1;
+      my_putchar('-');
+    }
+  if (nbr / 10 < 0)
+    return (0);
+  if (nbr / 10 > 0)
+    {
+      my_put_nbr(nbr / 10);
+      nombre = nbr;
+      my_put_nbr(nombre % 10);
+      return (nbr);
+    }
+  my_putchar(nbr + 48);
+  return (0);
 }

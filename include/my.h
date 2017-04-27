@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 **
 ** Started on  Tue Apr 25 11:42:26 2017 paul prost
-** Last update Wed Apr 26 15:27:58 2017 paul prost
+** Last update Thu Apr 27 17:25:37 2017 paul prost
 */
 
 #ifndef MY_H_
@@ -57,6 +57,10 @@ typedef struct  s_data
 {
   int	anth_nbr;
   char	*start;
+  int	start_posx;
+  int	start_posy;
+  int	end_posx;
+  int	end_posy;
   char	*end;
 }		t_data;
 
@@ -70,9 +74,13 @@ typedef struct  s_data
 
 void	my_putchar_error(char);
 int	my_get_nbr(char *);
+int	my_put_nbr(int);
+int	check_num(char *);
+void	display_inf(t_data *);
+void	read_list(t_list *, t_data *);
 int	handle_command(int, char *, t_data *, t_list *);
 t_node	*create_nodes(char *, int, int);
-char	**my_str_to_wordtab(char *);
+char	**my_str_to_wordtab(char *, int, char);
 t_list	*init_list();
 int	anth_nbr(int, t_data *);
 void	create_tunnels(char *);

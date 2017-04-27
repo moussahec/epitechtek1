@@ -5,7 +5,7 @@
 ## Login   <paul.prost@epitech.net>
 ## 
 ## Started on  Tue Apr 25 16:35:02 2017 paul prost
-## Last update Wed Apr 26 15:52:45 2017 paul prost
+## Last update Thu Apr 27 17:17:02 2017 paul prost
 ##
 
 SRC	=	basic2.c		\
@@ -16,6 +16,7 @@ SRC	=	basic2.c		\
 		main.c			\
 		get_next_line.c		\
 		my_get_nbr.c		\
+		display.c		\
 
 
 OBJ	=	$(SRC:.c=.o)

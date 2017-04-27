@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:39:29 2017 paul prost
-** Last update Wed Apr 26 16:48:51 2017 paul prost
+** Last update Thu Apr 27 17:25:07 2017 paul prost
 */
 
 #include "my.h"
@@ -18,7 +18,8 @@ int		read_file(int fd)
 
   d = malloc(sizeof(t_data));
   list = init_list();
-  fd = anth_nbr(fd, d);
+  if ((fd = anth_nbr(fd, d)) == -1)
+    return (84);
   while ((s = get_next_line(fd)))
     {
       if (s[0] == '#')
@@ -28,7 +29,8 @@ int		read_file(int fd)
       else if (check_tunnels(s) == 0)
 	create_tunnels(s);
     }
-  read_list(list);
+  display_inf(d);
+  read_list(list, d);
   return (0);
 }
 
@@ -42,7 +44,7 @@ int	open_file(char *name)
   return (0);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
   if (ac == 2)
     return (open_file(av[1]));

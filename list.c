@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 11:42:42 2017 paul prost
-** Last update Wed Apr 26 17:19:05 2017 paul prost
+** Last update Thu Apr 27 17:27:52 2017 paul prost
 */
 
 #include "include/my.h"
@@ -54,7 +54,7 @@ t_node		*create_nodes(char *name, int y, int x)
   return (node);
 }
 
-void	read_list(t_list *list)
+void	read_list(t_list *list, t_data *d)
 {
   t_node	*node;
   t_elem	*elem;
@@ -63,32 +63,16 @@ void	read_list(t_list *list)
   while (elem != NULL)
     {
       node = elem->data;
-      printf("%s ", node->name);
-      printf("%d ", node->posy);
-      printf("%d\n", node->posx);
+      if (my_strcmp(node->name, d->start) == 0 &&
+	  my_strcmp(node->name, d->end) == 0)
+	{
+	  my_putstr(node->name);
+	  my_putchar(' ');
+	  my_put_nbr(node->posy);
+	  my_putchar(' ');
+	  my_put_nbr(node->posx);
+	  my_putchar('\n');
+	}
       elem = elem->next;
     }
 }
-
-
-/* void		main() */
-/* { */
-/*   t_list	*list; */
-/*   t_node	*node; */
-/*   t_elem	*elem; */
-
-/*   list = init_list(); */
-/*   node = create_nodes("Moussa", 0, 0); */
-/*   push_back(list, node); */
-/*   node = create_nodes("Moussa2", 0, 0); */
-/*   push_back(list, node); */
-/*   node = create_nodes("Moussa4", 0, 0); */
-/*   push_back(list, node); */
-/*   elem = list->first; */
-/*   while (elem->next != NULL) */
-/*     { */
-/*       node = elem->data; */
-/*       printf("%s\n", node->name); */
-/*       elem = elem->next; */
-/*     } */
-/* } */
