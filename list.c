@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 11:42:42 2017 paul prost
-** Last update Thu Apr 27 17:27:52 2017 paul prost
+** Last update Thu Apr 27 20:58:14 2017 paul prost
 */
 
 #include "include/my.h"
@@ -51,6 +51,7 @@ t_node		*create_nodes(char *name, int y, int x)
   node->posx = x;
   node->posy = y;
   node->full = 0;
+  node->links = init_list();
   return (node);
 }
 

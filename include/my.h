@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 **
 ** Started on  Tue Apr 25 11:42:26 2017 paul prost
-** Last update Thu Apr 27 17:25:37 2017 paul prost
+** Last update Thu Apr 27 22:09:24 2017 paul prost
 */
 
 #ifndef MY_H_
@@ -55,13 +55,14 @@ typedef struct          s_node
 
 typedef struct  s_data
 {
-  int	anth_nbr;
+  char	**tunnels;
   char	*start;
+  char	*end;
+  int	anth_nbr;
   int	start_posx;
   int	start_posy;
   int	end_posx;
   int	end_posy;
-  char	*end;
 }		t_data;
 
 #include <errno.h>
@@ -73,17 +74,22 @@ typedef struct  s_data
 #include <stdlib.h>
 
 void	my_putchar_error(char);
+void	tunnels(t_data *);
+void	realloc_tab(char *, t_data *);
+t_node	*find_room(t_list *, char *);
+void	display(t_data *);
+void	start_room(t_data *);
+void	end_room(t_data *);
 int	my_get_nbr(char *);
 int	my_put_nbr(int);
 int	check_num(char *);
-void	display_inf(t_data *);
 void	read_list(t_list *, t_data *);
 int	handle_command(int, char *, t_data *, t_list *);
 t_node	*create_nodes(char *, int, int);
 char	**my_str_to_wordtab(char *, int, char);
 t_list	*init_list();
-int	anth_nbr(int, t_data *);
-void	create_tunnels(char *);
+char	*anth_nbr(int, t_data *);
+void	create_tunnels(char *, t_list *, t_data *);
 int	check_tunnels(char *);
 void	my_exit();
 void	push_back(t_list *, void *);

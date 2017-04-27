@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:44:56 2017 paul prost
-** Last update Thu Apr 27 17:10:55 2017 paul prost
+** Last update Thu Apr 27 22:11:27 2017 paul prost
 */
 
 #include "my.h"
@@ -39,7 +39,7 @@ int	check_alpha(char *str)
   return (0);
 }
 
-int     my_putstr(char *str)
+int	my_putstr(char *str)
 {
   int   i;
 
@@ -52,7 +52,7 @@ int     my_putstr(char *str)
   return (0);
 }
 
-int     my_putstr_error(char *str)
+int	my_putstr_error(char *str)
 {
   int   i;
 
@@ -65,7 +65,7 @@ int     my_putstr_error(char *str)
   return (0);
 }
 
-int     my_strlen(char *str)
+int	my_strlen(char *str)
 {
   int   i;
 

@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:39:29 2017 paul prost
-** Last update Thu Apr 27 17:25:07 2017 paul prost
+** Last update Thu Apr 27 22:06:23 2017 paul prost
 */
 
 #include "my.h"
@@ -17,20 +17,24 @@ int		read_file(int fd)
   t_list     *list;
 
   d = malloc(sizeof(t_data));
+  d->tunnels = malloc(sizeof(char *) * 1);
+  d->tunnels[0] = NULL;
   list = init_list();
-  if ((fd = anth_nbr(fd, d)) == -1)
+  if ((s = anth_nbr(fd, d)) == NULL)
     return (84);
-  while ((s = get_next_line(fd)))
+  while (s != NULL)
     {
       if (s[0] == '#')
 	fd = handle_command(fd, s, d, list);
       else if (check_tunnels(s) == 1)
 	create_room(s, 0, d, list);
-      else if (check_tunnels(s) == 0)
-	create_tunnels(s);
+      else if ((check_tunnels(s) == 0) && (check_num(s) == 1))
+	create_tunnels(s, list, d);
+      s = get_next_line(fd);
     }
-  display_inf(d);
+  display(d);
   read_list(list, d);
+  tunnels(d);
   return (0);
 }
 

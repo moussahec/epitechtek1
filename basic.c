@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:45:12 2017 paul prost
-** Last update Thu Apr 27 17:18:51 2017 paul prost
+** Last update Thu Apr 27 22:11:50 2017 paul prost
 */
 
 #include "my.h"
@@ -16,11 +16,9 @@ int	check_tunnels(char *s)
 
   i = 0;
   while (s[i])
-    {
-      if (s[i] == ' ')
-	return (1);
-      i++;
-    }
+    if (s[i++] == ' ')
+      return (1);
+  i = 0;
   return (0);
 }
 
@@ -29,6 +27,8 @@ int	my_strcmp(char *str, char *abc)
   int   i;
 
   i = 0;
+  if ((str == NULL && abc != NULL) || (str != NULL && abc == NULL))
+    return (0);
   if (my_strlen(str) != my_strlen(abc))
     return (0);
   while (i < my_strlen(str))
@@ -40,17 +40,17 @@ int	my_strcmp(char *str, char *abc)
   return (1);
 }
 
-void    my_putchar(char c)
+void	my_putchar(char c)
 {
   write(1, &c, 1);
 }
 
-void    my_putchar_error(char c)
+void	my_putchar_error(char c)
 {
   write(2, &c, 1);
 }
 
-int     my_put_nbr(int nbr)
+int	my_put_nbr(int nbr)
 {
   int   nombre;
 
