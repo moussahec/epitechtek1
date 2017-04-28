@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 **
 ** Started on  Tue Apr 25 11:42:26 2017 paul prost
-** Last update Thu Apr 27 22:09:24 2017 paul prost
+** Last update Fri Apr 28 15:44:22 2017 paul prost
 */
 
 #ifndef MY_H_
@@ -84,11 +84,11 @@ int	my_get_nbr(char *);
 int	my_put_nbr(int);
 int	check_num(char *);
 void	read_list(t_list *, t_data *);
-int	handle_command(int, char *, t_data *, t_list *);
+int	handle_command(char *, t_data *, t_list *);
 t_node	*create_nodes(char *, int, int);
 char	**my_str_to_wordtab(char *, int, char);
 t_list	*init_list();
-char	*anth_nbr(int, t_data *);
+char	*anth_nbr(t_data *);
 void	create_tunnels(char *, t_list *, t_data *);
 int	check_tunnels(char *);
 void	my_exit();

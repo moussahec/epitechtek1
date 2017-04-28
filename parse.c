@@ -5,17 +5,17 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:05:20 2017 paul prost
-** Last update Thu Apr 27 22:01:16 2017 paul prost
+** Last update Fri Apr 28 15:43:31 2017 paul prost
 */
 
 #include "my.h"
 
-int	handle_command(int fd, char *s, t_data *d, t_list *list)
+int	handle_command(char *s, t_data *d, t_list *list)
 {
   if (my_strcmp(s, "##start") == 1)
     {
       while (s[0] == '#')
-	s = get_next_line(fd);
+	s = get_next_line(0);
       if (check_tunnels(s) == 1)
 	create_room(s, 1, d, list);
       else
@@ -24,13 +24,13 @@ int	handle_command(int fd, char *s, t_data *d, t_list *list)
   else if (my_strcmp(s, "##end") == 1)
     {
       while (s[0] == '#')
-	s = get_next_line(fd);
+	s = get_next_line(0);
       if (check_tunnels(s) == 1)
 	create_room(s, 2, d, list);
       else
 	d->end = NULL;
     }
-  return (fd);
+  return (0);
 }
 
 void		create_room(char *s, int a, t_data *d, t_list *list)
@@ -86,14 +86,14 @@ void		create_tunnels(char *s, t_list *list, t_data *d)
   push_back(node2->links, node1);
 }
 
-char	*anth_nbr(int fd, t_data *d)
+char	*anth_nbr(t_data *d)
 {
   char	*s;
 
-  if ((s = get_next_line(fd)) == NULL)
+  if ((s = get_next_line(0)) == NULL)
     return (NULL);
   while (s[0] == '#' && (my_strcmp(s, "##start") == 0))
-    s = get_next_line(fd);
+    s = get_next_line(0);
   if (check_num(s) == 0)
     d->anth_nbr = my_get_nbr(s);
   else
