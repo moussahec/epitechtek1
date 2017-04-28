@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 **
 ** Started on  Tue Apr 25 11:42:26 2017 paul prost
-** Last update Fri Apr 28 15:44:22 2017 paul prost
+** Last update Fri Apr 28 17:01:31 2017 paul prost
 */
 
 #ifndef MY_H_
@@ -89,7 +89,7 @@ t_node	*create_nodes(char *, int, int);
 char	**my_str_to_wordtab(char *, int, char);
 t_list	*init_list();
 char	*anth_nbr(t_data *);
-void	create_tunnels(char *, t_list *, t_data *);
+int	create_tunnels(char *, t_list *, t_data *);
 int	check_tunnels(char *);
 void	my_exit();
 void	push_back(t_list *, void *);

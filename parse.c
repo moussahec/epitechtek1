@@ -5,14 +5,14 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:05:20 2017 paul prost
-** Last update Fri Apr 28 15:43:31 2017 paul prost
+** Last update Fri Apr 28 17:11:42 2017 paul prost
 */
 
 #include "my.h"
 
 int	handle_command(char *s, t_data *d, t_list *list)
 {
-  if (my_strcmp(s, "##start") == 1)
+  if ((my_strcmp(s, "##start") == 1) && (d->start == NULL))
     {
       while (s[0] == '#')
 	s = get_next_line(0);
@@ -21,7 +21,7 @@ int	handle_command(char *s, t_data *d, t_list *list)
       else
 	d->start = NULL;
     }
-  else if (my_strcmp(s, "##end") == 1)
+  else if ((my_strcmp(s, "##end") == 1) && (d->end == NULL))
     {
       while (s[0] == '#')
 	s = get_next_line(0);
@@ -30,6 +30,8 @@ int	handle_command(char *s, t_data *d, t_list *list)
       else
 	d->end = NULL;
     }
+  else if ((my_strcmp(s, "##end") == 1) || (my_strcmp(s, "##start") == 1))
+    return (84);
   return (0);
 }
 
@@ -64,15 +66,18 @@ t_node	*find_room(t_list *list, char *name)
 
   elem = list->first;
   node = elem->data;
-  while (my_strcmp(node->name, name) != 1 && (elem != NULL))
+  while (my_strcmp(node->name, name) != 1 && (elem->next != NULL))
     {
       elem = elem->next;
       node = elem->data;
     }
-  return (node);
+  if (my_strcmp(node->name, name) == 1)
+    return (node);
+  else
+    return (NULL);
 }
 
-void		create_tunnels(char *s, t_list *list, t_data *d)
+int		create_tunnels(char *s, t_list *list, t_data *d)
 {
   char		**tab;
   t_node	*node1;
@@ -80,10 +85,13 @@ void		create_tunnels(char *s, t_list *list, t_data *d)
 
   realloc_tab(s, d);
   tab = my_str_to_wordtab(s, 2, '-');
-  node1 = find_room(list, tab[0]);
-  node2 = find_room(list, tab[1]);
+  if ((node1 = find_room(list, tab[0])) == NULL)
+    return (84);
+  if ((node2 = find_room(list, tab[1])) == NULL)
+    return (84);
   push_back(node1->links, node2);
   push_back(node2->links, node1);
+  return (0);
 }
 
 char	*anth_nbr(t_data *d)
