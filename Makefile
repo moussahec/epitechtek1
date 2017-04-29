@@ -5,11 +5,12 @@
 ## Login   <paul.prost@epitech.net>
 ## 
 ## Started on  Tue Apr 25 16:35:02 2017 paul prost
-## Last update Sat Apr 29 17:11:54 2017 paul prost
+## Last update Sat Apr 29 18:50:11 2017 paul prost
 ##
 
 SRC	=	basic2.c		\
 		my_str_to_wordtab.c	\
+		str_to_wordtab.c	\
 		realloc_tab.c		\
 		list.c			\
 		basic.c			\

@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:39:29 2017 paul prost
-** Last update Sat Apr 29 17:22:06 2017 paul prost
+** Last update Sat Apr 29 20:29:53 2017 paul prost
 */
 
 #include "my.h"
@@ -23,13 +23,25 @@ int		read_file(t_data *d, t_list *list)
 	  if (handle_command(s, d, list) == 84)
 	    return (84);
 	}
-      else if (check_tunnels(s) == 1)
+      else if ((check_tunnels(s) == 1) && (check_words(s, d) == 3))
 	create_room(s, 0, d, list);
       else if ((check_tunnels(s) == 0) && (check_num(s) == 1))
 	if (create_tunnels(s, list, d) == 84)
-	  return (84);
+	  return (0);
       s = get_next_line(0);
     }
+  return (0);
+}
+
+int	launch(t_data *d, t_list *list)
+{
+  display(d);
+  read_list(list, d);
+  tunnels(d);
+  if (d->start == NULL || d->end == NULL)
+    return (84);
+  if (d->tunnels[0] == NULL)
+    return (84);
   return (0);
 }
 
@@ -44,11 +56,9 @@ int	init()
   d->start = NULL;
   d->end = NULL;
   list = init_list();
-  read_file(d, list);
-  display(d);
-  read_list(list, d);
-  tunnels(d);
-  return (0);
+  if (read_file(d, list) == 84)
+    return (84);
+  return (launch(d, list));
 }
 
 int	main()

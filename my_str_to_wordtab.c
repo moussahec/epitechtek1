@@ -5,12 +5,12 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:20:58 2017 paul prost
-** Last update Wed Apr 26 19:01:17 2017 paul prost
+** Last update Sat Apr 29 19:05:18 2017 paul prost
 */
 
 #include "my.h"
 
-int	length(char *str, int i, char c)
+int	length2(char *str, int i, char c)
 {
   int	len;
 
@@ -34,9 +34,9 @@ char	**my_str_to_wordtab(char *str, int a, char c)
   j = (n = (i = 0));
   tab = malloc(sizeof(char *) * (a + 1));
   tab[a] = NULL;
-  while (str[i])
+  while (str[i] != '\0' && n < a)
     {
-      len = length(str, i, c);
+      len = length2(str, i, c);
       tab[n] = malloc(sizeof(char) * (len + 1));
       while (j < len)
 	{

@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 **
 ** Started on  Tue Apr 25 11:42:26 2017 paul prost
-** Last update Fri Apr 28 17:01:31 2017 paul prost
+** Last update Sat Apr 29 20:31:34 2017 paul prost
 */
 
 #ifndef MY_H_
@@ -58,6 +58,8 @@ typedef struct  s_data
   char	**tunnels;
   char	*start;
   char	*end;
+  int	x;
+  int	y;
   int	anth_nbr;
   int	start_posx;
   int	start_posy;
@@ -74,8 +76,12 @@ typedef struct  s_data
 #include <stdlib.h>
 
 void	my_putchar_error(char);
+int	check_words(char *, t_data *);
+int	tunnels_error(char *);
+int	check_error(t_list *, char *);
 void	tunnels(t_data *);
 void	realloc_tab(char *, t_data *);
+char	**str_to_wordtab(char *, t_data *);
 t_node	*find_room(t_list *, char *);
 void	display(t_data *);
 void	start_room(t_data *);

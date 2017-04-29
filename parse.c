@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:05:20 2017 paul prost
-** Last update Fri Apr 28 17:11:42 2017 paul prost
+** Last update Sat Apr 29 20:33:05 2017 paul prost
 */
 
 #include "my.h"
@@ -65,6 +65,8 @@ t_node	*find_room(t_list *list, char *name)
   t_elem        *elem;
 
   elem = list->first;
+  if (elem == NULL)
+    return (NULL);
   node = elem->data;
   while (my_strcmp(node->name, name) != 1 && (elem->next != NULL))
     {
@@ -80,15 +82,21 @@ t_node	*find_room(t_list *list, char *name)
 int		create_tunnels(char *s, t_list *list, t_data *d)
 {
   char		**tab;
+  char		**tab1;
   t_node	*node1;
   t_node	*node2;
 
-  realloc_tab(s, d);
-  tab = my_str_to_wordtab(s, 2, '-');
+  if (tunnels_error(s) == 84)
+    return (84);
+  tab1 = str_to_wordtab(s, d);
+  tab = my_str_to_wordtab(tab1[0], 2, '-');
   if ((node1 = find_room(list, tab[0])) == NULL)
     return (84);
   if ((node2 = find_room(list, tab[1])) == NULL)
     return (84);
+  if (check_error(node1->links, node2->name) == 84)
+    return (84);
+  realloc_tab(s, d);
   push_back(node1->links, node2);
   push_back(node2->links, node1);
   return (0);
@@ -97,14 +105,20 @@ int		create_tunnels(char *s, t_list *list, t_data *d)
 char	*anth_nbr(t_data *d)
 {
   char	*s;
+  char	**tab;
 
   if ((s = get_next_line(0)) == NULL)
     return (NULL);
-  while (s[0] == '#' && (my_strcmp(s, "##start") == 0))
+  while (s != NULL && (s[0] == '#' && (my_strcmp(s, "##start") == 0)))
     s = get_next_line(0);
-  if (check_num(s) == 0)
-    d->anth_nbr = my_get_nbr(s);
+  if (s == NULL)
+    return (NULL);
+  tab = str_to_wordtab(s, d);
+  if (check_num(tab[0]) == 0)
+    d->anth_nbr = my_get_nbr(tab[0]);
   else
-    d->anth_nbr = 0;
+    return (NULL);
+  if (d->anth_nbr < 0)
+    return (NULL);
   return (s);
 }

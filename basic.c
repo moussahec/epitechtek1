@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:45:12 2017 paul prost
-** Last update Thu Apr 27 22:11:50 2017 paul prost
+** Last update Sat Apr 29 19:09:58 2017 paul prost
 */
 
 #include "my.h"
@@ -18,7 +18,6 @@ int	check_tunnels(char *s)
   while (s[i])
     if (s[i++] == ' ')
       return (1);
-  i = 0;
   return (0);
 }
 
