@@ -5,7 +5,7 @@
 ## Login   <paul.prost@epitech.net>
 ## 
 ## Started on  Tue Apr 25 16:35:02 2017 paul prost
-## Last update Fri Apr 28 11:10:47 2017 paul prost
+## Last update Sat Apr 29 17:11:54 2017 paul prost
 ##
 
 SRC	=	basic2.c		\
@@ -17,6 +17,7 @@ SRC	=	basic2.c		\
 		main.c			\
 		get_next_line.c		\
 		my_get_nbr.c		\
+		error.c			\
 		display.c		\
 
 

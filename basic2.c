@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:44:56 2017 paul prost
-** Last update Thu Apr 27 22:11:27 2017 paul prost
+** Last update Sat Apr 29 17:26:16 2017 paul prost
 */
 
 #include "my.h"
@@ -15,6 +15,8 @@ int	check_num(char *str)
   int	i;
 
   i = 0;
+  if (str[0] == '-')
+    i++;
   while (str[i] != '\0')
     {
       if (str[i] < '0' || str[i] > '9' )
