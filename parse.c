@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:05:20 2017 paul prost
-** Last update Sat Apr 29 20:33:05 2017 paul prost
+** Last update Sun Apr 30 22:27:26 2017 paul prost
 */
 
 #include "my.h"
@@ -93,8 +93,6 @@ int		create_tunnels(char *s, t_list *list, t_data *d)
   if ((node1 = find_room(list, tab[0])) == NULL)
     return (84);
   if ((node2 = find_room(list, tab[1])) == NULL)
-    return (84);
-  if (check_error(node1->links, node2->name) == 84)
     return (84);
   realloc_tab(s, d);
   push_back(node1->links, node2);

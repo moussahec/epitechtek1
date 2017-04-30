@@ -5,12 +5,12 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Sat Apr 29 17:08:26 2017 paul prost
-** Last update Sat Apr 29 20:22:19 2017 paul prost
+** Last update Sun Apr 30 22:31:58 2017 paul prost
 */
 
 #include "my.h"
 
-int     check_words(char *str, t_data *d)
+int	check_words(char *str, t_data *d)
 {
   char	**tab;
   int   len;
@@ -23,7 +23,6 @@ int     check_words(char *str, t_data *d)
     {
       if (tab[i][0] != '#')
 	len++;
- 
       i++;
     }
   return (len);
@@ -44,23 +43,5 @@ int	tunnels_error(char *str)
     }
   if (n != 1)
     return (84);
-  return (0);
-}
-
-int	check_error(t_list *link, char *name)
-{
-  t_node        *node;
-  t_elem        *elem;
-
-  elem = link->first;
-  if (elem == NULL)
-    return (0);
-  while (elem != NULL)
-    {
-      node = elem->data;
-      if (my_strcmp(node->name, name) == 1)
-	return (84);
-      elem = elem->next;
-    }
   return (0);
 }
