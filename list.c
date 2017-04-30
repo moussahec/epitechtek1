@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 11:42:42 2017 paul prost
-** Last update Thu Apr 27 20:58:14 2017 paul prost
+** Last update Sun Apr 30 22:46:48 2017 paul prost
 */
 
 #include "include/my.h"
@@ -21,7 +21,7 @@ t_list		*init_list()
   return (list);
 }
 
-void	push_back(t_list *list, void *data)
+void		push_back(t_list *list, void *data)
 {
   t_elem	*elem;
 
@@ -55,7 +55,7 @@ t_node		*create_nodes(char *name, int y, int x)
   return (node);
 }
 
-void	read_list(t_list *list, t_data *d)
+void		read_list(t_list *list, t_data *d)
 {
   t_node	*node;
   t_elem	*elem;

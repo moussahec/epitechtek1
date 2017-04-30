@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Tue Apr 25 16:39:29 2017 paul prost
-** Last update Sat Apr 29 20:29:53 2017 paul prost
+** Last update Sun Apr 30 22:47:23 2017 paul prost
 */
 
 #include "my.h"
@@ -45,10 +45,10 @@ int	launch(t_data *d, t_list *list)
   return (0);
 }
 
-int	init()
+int		init()
 {
-  t_data        *d;
-  t_list     *list;
+  t_data	*d;
+  t_list	*list;
 
   d = malloc(sizeof(t_data));
   d->tunnels = malloc(sizeof(char *) * 1);

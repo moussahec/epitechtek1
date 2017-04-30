@@ -5,15 +5,15 @@
 ** Login   <paul.prost@epitech.net>
 **
 ** Started on  Tue Apr 25 11:42:26 2017 paul prost
-** Last update Sat Apr 29 20:31:34 2017 paul prost
+** Last update Sun Apr 30 22:44:52 2017 paul prost
 */
 
 #ifndef MY_H_
 # define MY_H_
 
-#ifndef READ_SIZE
-# define READ_SIZE (1)
-#endif
+# ifndef READ_SIZE
+#  define READ_SIZE (1)
+# endif
 
 typedef struct	s_elem
 {
@@ -24,17 +24,17 @@ typedef struct	s_elem
 
 typedef struct  s_gnl
 {
-  char  *save;
-  char  *read;
-  char  *realloc;
-  char  *line;
-  int   stop;
-  int   size;
-  int   n_pos;
-  int   i;
-  int   n;
-  int   bytes;
-  int   stock_size;
+  char		*save;
+  char		*read;
+  char		*realloc;
+  char		*line;
+  int		stop;
+  int		size;
+  int		n_pos;
+  int		i;
+  int		n;
+  int		bytes;
+  int		stock_size;
 }               t_gnl;
 
 typedef struct	s_list
@@ -55,25 +55,24 @@ typedef struct          s_node
 
 typedef struct  s_data
 {
-  char	**tunnels;
-  char	*start;
-  char	*end;
-  int	x;
-  int	y;
-  int	anth_nbr;
-  int	start_posx;
-  int	start_posy;
-  int	end_posx;
-  int	end_posy;
+  char		**tunnels;
+  char		*start;
+  char		*end;
+  int		x;
+  int		y;
+  int		anth_nbr;
+  int		start_posx;
+  int		start_posy;
+  int		end_posx;
+  int		end_posy;
 }		t_data;
 
-#include <errno.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+# include <errno.h>
+# include <sys/types.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 void	my_putchar_error(char);
 int	check_words(char *, t_data *);
@@ -111,4 +110,4 @@ int	my_put_nbr(int);
 void	show_wordtab(t_data *, char **);
 char	*my_strcat(char *, char *, t_data *);
 
-#endif /* MY_H_ */
+#endif /* !MY_H_ */

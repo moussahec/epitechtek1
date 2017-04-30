@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Wed Apr 26 11:05:20 2017 paul prost
-** Last update Sun Apr 30 22:27:26 2017 paul prost
+** Last update Sun Apr 30 22:48:03 2017 paul prost
 */
 
 #include "my.h"
@@ -59,7 +59,7 @@ void		create_room(char *s, int a, t_data *d, t_list *list)
   free(tab);
 }
 
-t_node	*find_room(t_list *list, char *name)
+t_node		*find_room(t_list *list, char *name)
 {
   t_node        *node;
   t_elem        *elem;

@@ -5,7 +5,7 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Sat Apr 29 18:05:55 2017 paul prost
-** Last update Sat Apr 29 18:06:12 2017 paul prost
+** Last update Sun Apr 30 22:40:48 2017 paul prost
 */
 
 #include "my.h"
@@ -102,7 +102,7 @@ char	**str_to_wordtab(char *str1, t_data *d)
     return (NULL);
   word = words(str1);
   len = length(str1);
-  str  = malloc(sizeof(char *) * (word + 1));
+  str = malloc(sizeof(char *) * (word + 1));
   while (i < word)
     {
       str[i] = malloc(sizeof(char) * len + 1);

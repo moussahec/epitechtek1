@@ -5,7 +5,7 @@
 ## Login   <paul.prost@epitech.net>
 ## 
 ## Started on  Tue Apr 25 16:35:02 2017 paul prost
-## Last update Sat Apr 29 18:50:11 2017 paul prost
+## Last update Sun Apr 30 22:51:03 2017 paul prost
 ##
 
 SRC	=	basic2.c		\
@@ -26,7 +26,7 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	lem_in
 
-CFLAGS	=	-Iinclude -g3 -W -Wall
+CFLAGS	=	-Iinclude -W -Wall
 
 all:		$(NAME)
 

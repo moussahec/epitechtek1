@@ -5,12 +5,12 @@
 ** Login   <paul.prost@epitech.net>
 ** 
 ** Started on  Thu Apr 27 17:02:45 2017 paul prost
-** Last update Thu Apr 27 22:07:21 2017 paul prost
+** Last update Sun Apr 30 22:45:53 2017 paul prost
 */
 
 #include "my.h"
 
-void		tunnels(t_data *d)
+void	tunnels(t_data *d)
 {
   int	i;
 
