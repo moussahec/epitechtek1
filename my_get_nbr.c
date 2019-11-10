@@ -1,11 +1,10 @@
 /*
-** my_get_nbr.c for my_get_nbr.c in /home/paul.prost/Semestre1/Prog_Elem/CPE_2016_Pushswap
 ** 
-** Made by paul prost
-** Login   <paul.prost@epitech.net>
+** Made by Moussa Hechaichi
+** Login   <moussa.hechaichi@epitech.eu>
 ** 
-** Started on  Wed Nov 23 14:48:09 2016 paul prost
-** Last update Sat Apr 29 19:00:26 2017 paul prost
+** Started on  Tue Apr 25 16:45:12 2017 paul prost
+** Last update Sat Apr 29 19:09:58 2017 paul prost
 */
 
 #include "include/my.h"

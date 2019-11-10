@@ -1,11 +1,10 @@
 /*
-** error.c for error.c in /home/paul.prost/Tek1/Semestre2/Prog_Elem/CPE_2016_Lemin
 ** 
-** Made by paul prost
-** Login   <paul.prost@epitech.net>
+** Made by Moussa Hechaichi
+** Login   <moussa.hechaichi@epitech.eu>
 ** 
-** Started on  Sat Apr 29 17:08:26 2017 paul prost
-** Last update Sun Apr 30 22:31:58 2017 paul prost
+** Started on  Tue Apr 25 16:45:12 2017 paul prost
+** Last update Sat Apr 29 19:09:58 2017 paul prost
 */
 
 #include "my.h"

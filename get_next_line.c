@@ -1,11 +1,10 @@
 /*
-** get_next_line2.c for get_next_line.c in /home/paul.prost/Semestre1/CPE_2016_getnextline
 ** 
-** Made by paul prost
-** Login   <paul.prost@epitech.net>
+** Made by Moussa Hechaichi
+** Login   <moussa.hechaichi@epitech.eu>
 ** 
-** Started on  Sun Jan 15 18:23:00 2017 paul prost
-** Last update Wed Apr 26 18:49:05 2017 paul prost
+** Started on  Tue Apr 25 16:45:12 2017 paul prost
+** Last update Sat Apr 29 19:09:58 2017 paul prost
 */
 
 #include "my.h"

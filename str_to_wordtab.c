@@ -1,11 +1,10 @@
 /*
-** str_to_wordtab.c for str_to_wordtab.c in /home/paul.prost/Tek1/Semestre2/Prog_Elem/CPE_2016_Lemin
 ** 
-** Made by paul prost
-** Login   <paul.prost@epitech.net>
+** Made by Moussa Hechaichi
+** Login   <moussa.hechaichi@epitech.eu>
 ** 
-** Started on  Sat Apr 29 18:05:55 2017 paul prost
-** Last update Sun Apr 30 22:40:48 2017 paul prost
+** Started on  Tue Apr 25 16:45:12 2017 paul prost
+** Last update Sat Apr 29 19:09:58 2017 paul prost
 */
 
 #include "my.h"
